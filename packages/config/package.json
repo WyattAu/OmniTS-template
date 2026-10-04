@@ -3,5 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Shared tsconfig + tool presets for the workspace (single source of truth)"
+  "description": "Shared tsconfig + tool presets for the workspace (single source of truth)",
+  "devDependencies": {
+    "solid-js": "^1.9.0"
+  }
 }

@@ -13,12 +13,14 @@
     "test": "bun run --filter '*' test",
     "lint": "biome check .",
     "format": "biome check --write .",
-    "e2e": "bun run --filter '@omni/web' e2e"
+    "e2e": "bun run --filter '@omni/web' e2e",
+    "changeset": "changeset"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.0.0",
     "typescript": "^5.6.0",
     "knip": "^5.0.0",
-    "@changesets/cli": "^2.27.0"
+    "@changesets/cli": "^2.27.0",
+    "@changesets/changelog-github": "^0.5.0"
   }
 }
