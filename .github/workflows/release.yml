@@ -1,0 +1,32 @@
+# Changesets flow: the changesets bot PRs version bumps; merging version
+# packages + publishes with npm provenance. Requires secret NPM_TOKEN.
+name: release
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  changesets:
+    runs-on: ubuntu-latest
+    if: ${{ github.repository_owner == 'WyattAu' }}
+    permissions:
+      contents: write
+      pull-requests: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+      - name: create version PR
+        uses: changesets/action@v1
+        with:
+          version: bunx changeset version
+          publish: bun publish
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_CONFIG_PROVENANCE: "true"

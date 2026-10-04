@@ -1,0 +1,9 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    { "label": "dev (web)", "type": "shell", "command": "bun run --filter '@omni/web' dev", "isBackground": true, "problemMatcher": [] },
+    { "label": "build", "type": "shell", "command": "make build", "group": { "kind": "build", "isDefault": true }, "problemMatcher": [] },
+    { "label": "test", "type": "shell", "command": "make test", "group": "test", "problemMatcher": [] },
+    { "label": "ci (all gates)", "type": "shell", "command": "make ci", "problemMatcher": [] }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "recommendations": [
+    "astro-build.astro-vscode",
+    "biomejs.biome",
+    "vitest.explorer",
+    "tekumara.typos-vscode",
+    "EditorConfig.EditorConfig",
+    "github.vscode-github-actions"
+  ]
+}

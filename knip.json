@@ -1,0 +1,13 @@
+{
+  "$schema": "https://unpkg.com/knip@5/schema.json",
+  "ignoreDependencies": ["astro"],
+  "workspaces": {
+    "apps/web": {
+      "entry": ["src/**/*.{ts,tsx,astro}", "tests/**/*.ts"]
+    },
+    "packages/ui": {
+      "entry": ["src/index.ts"]
+    }
+  },
+  "ignoreExportsUsedInFile": true
+}
