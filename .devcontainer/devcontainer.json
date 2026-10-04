@@ -3,10 +3,9 @@
   "name": "OmniTS",
   "image": "mcr.microsoft.com/devcontainers/typescript-node:22",
   "features": {
-    "ghcr.io/oven-sh/bun:1": {},
     "ghcr.io/devcontainers/features/github-cli:1": {}
   },
-  "postCreateCommand": "bun install && bunx playwright install chromium",
+  "postCreateCommand": "curl -fsSL https://bun.sh/install | bash && \"$HOME/.bun/bin/bun\" install && \"$HOME/.bun/bin/bun\" install -g bunx >/dev/null 2>&1 || true; \"$HOME/.bun/bin/bun\" x playwright install chromium --with-deps || bunx --bun playwright install chromium --with-deps",
   "customizations": {
     "vscode": {
       "extensions": [

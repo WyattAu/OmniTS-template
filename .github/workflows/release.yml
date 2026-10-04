@@ -12,7 +12,9 @@ permissions:
 jobs:
   changesets:
     runs-on: ubuntu-latest
-    if: ${{ github.repository_owner == 'WyattAu' }}
+    # Armed via repo *variable* RELEASE_ENABLED=true (+ NPM_TOKEN secret)
+    # so fresh templates stay green (skipped) instead of red.
+    if: ${{ github.repository_owner == 'WyattAu' && vars.RELEASE_ENABLED == 'true' }}
     permissions:
       contents: write
       pull-requests: write
