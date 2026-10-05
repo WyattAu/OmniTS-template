@@ -5,6 +5,7 @@
   "type": "module",
   "description": "Shared tsconfig + tool presets for the workspace (single source of truth)",
   "devDependencies": {
+    "astro": "^5.0.0",
     "solid-js": "^1.9.0"
   }
 }
