@@ -43,7 +43,7 @@ jobs:
       - uses: actions/checkout@v7
       - uses: oven-sh/setup-bun@v2
       - run: bun install --frozen-lockfile
-      - run: bunx knip
+      - run: bun run knip
 
   # Loop 1: macOS + Windows legs — the shared gate runs on Linux; these
   # prove the build+test surface on the other platforms (advisory while
