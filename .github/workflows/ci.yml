@@ -68,3 +68,15 @@ jobs:
       - run: bun install --frozen-lockfile
       - run: bun run build
       - run: bun run test
+
+  # Loop 2: performance budget. Advisory for one loop, then graduates to a
+  # blocking gate (LOOP.md graduation policy). Same scripts/ commands the
+  # developer runs locally - never a CI-only measurement path.
+  perf:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v7
+      - uses: oven-sh/setup-bun@v2
+      - run: bun install --frozen-lockfile
+      - run: make bench
