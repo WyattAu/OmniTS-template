@@ -1,10 +1,15 @@
 {
   "editor.formatOnSave": true,
+  "workbench.colorTheme": "Shroom Space",
+  "workbench.iconTheme": "vs-seti",
   "editor.defaultFormatter": "biomejs.biome",
   "editor.codeActionsOnSave": {
     "source.organizeImports": "explicit",
     "source.fixAll.biome": "explicit"
   },
   "typescript.tsdk": "node_modules/typescript/lib",
-  "files.watcherExclude": { "**/node_modules/**": true, "**/dist/**": true }
+  "files.watcherExclude": {
+    "**/node_modules/**": true,
+    "**/dist/**": true
+  }
 }
