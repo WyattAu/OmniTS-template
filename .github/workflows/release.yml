@@ -29,7 +29,10 @@ jobs:
         uses: changesets/action@ae32849d5ba541f9ae29e40e22a623bc13562f51 # v2.1.2
         with:
           version: bunx changeset version
-          publish: bun publish
+          # --provenance: npm generates an in-toto attestation bound to this
+          # workflow's OIDC (id-token: write above). NPM_CONFIG_PROVENANCE alone
+          # is npm's variable -- say it where bun reads it.
+          publish: bun publish --provenance
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
